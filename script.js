@@ -14,7 +14,6 @@ btn.addEventListener("click", () => {
     list.push(input.value);
     total += 1;
   }
-  console.log(list);
 
   displayList();
 });
@@ -24,7 +23,6 @@ const displayList = () => {
 
   toDoList.innerHTML += `<li><i class="fa-solid fa-check"></i>${input.value} <i class="fa-solid fa-trash"></i> </li>`;
   var trash = document.querySelectorAll(".fa-trash");
-  console.log(trash);
   trash.forEach((t) => {
     t.addEventListener("click", () => {
       t.parentElement.style.display = "none";
