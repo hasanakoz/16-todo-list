@@ -20,8 +20,8 @@ btn.addEventListener("click", () => {
 
 const displayList = () => {
   totalCount.innerHTML = total;
-
   toDoList.innerHTML += `<li><i class="fa-solid fa-check"></i>${input.value} <i class="fa-solid fa-trash"></i> </li>`;
+  input.value = "";
   var trash = document.querySelectorAll(".fa-trash");
   trash.forEach((t) => {
     t.addEventListener("click", () => {
