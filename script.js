@@ -9,7 +9,7 @@ let completedTask = 0;
 
 btn.addEventListener("click", () => {
   if (!input.value) {
-    return;
+    alert("Please enter a task");
   } else {
     list.push(input.value);
     total += 1;
