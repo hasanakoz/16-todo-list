@@ -1,10 +1,11 @@
 const btn = document.querySelector(".btn");
 const input = document.querySelector(".todo");
-const toDoList = document.querySelector(".list");
+const toDoList = document.querySelector(".addedToDo");
 const totalCount = document.querySelector("span.total");
 const completed = document.querySelector(".completed");
 let total = 0;
 let list = [];
+let completedTask = 0;
 
 btn.addEventListener("click", () => {
   if (!input.value) {
@@ -13,11 +14,40 @@ btn.addEventListener("click", () => {
     list.push(input.value);
     total += 1;
   }
-  input.innerHTML = " ";
-  totalCount.innerHTML = total;
+  console.log(list);
+
   displayList();
 });
 
 const displayList = () => {
-  toDoList.innerHTML += `<input type="checkbox" id = "checkbox"><label for= "checkbox">${input.value}</label>`;
+  totalCount.innerHTML = total;
+
+  toDoList.innerHTML += `<li><i class="fa-solid fa-check"></i>${input.value} <i class="fa-solid fa-trash"></i> </li>`;
+  var trash = document.querySelectorAll(".fa-trash");
+  console.log(trash);
+  trash.forEach((t) => {
+    t.addEventListener("click", () => {
+      t.parentElement.innerHTML = "";
+      list.splice(t);
+      total -= 1;
+      completedTask > 0 ? (completedTask -= 1) : completedTask;
+      completed.innerHTML = completedTask;
+      totalCount.innerHTML = total;
+    });
+  });
+  let check = document.querySelectorAll(".fa-check");
+  check.forEach((item) => {
+    item.addEventListener("click", () => {
+      if (item.parentElement.className == "checked") {
+        item.parentElement.style.textDecoration = "line-through";
+      } else {
+        item.parentElement.className = "checked";
+        completedTask += 1;
+        completed.innerHTML = completedTask;
+      }
+    });
+  });
 };
+
+// let trash = document.querySelectorAll(".fa-trash");
+// console.log(trash);

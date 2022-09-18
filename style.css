@@ -20,7 +20,8 @@ body {
 
 h1 {
   text-align: center;
-  margin-top: 10px;
+  margin: 20px;
+  padding-top: 2rem;
 }
 
 .main {
@@ -39,73 +40,73 @@ h1 {
   /* border: 2px solid red; */
 }
 input {
-  width: 80%;
-  height: 2rem;
+  width: 75%;
+  height: 3rem;
   font-size: 1.2rem;
   padding: 10px;
   border-radius: 10px;
 }
 button {
-  height: 2rem;
-  width: 16%;
+  /* height: 2rem; */
+  /* width: 16%; */
   border-radius: 10px;
   font-size: 1.2rem;
+  padding: 10px;
 }
 button:hover {
   background-color: bisque;
 }
-button:active {
+button:active,
+.fa-check:active {
   transform: scale(0.9);
-}
-.list {
-  margin-top: 2rem;
-  border: 2px solid red;
-}
-.list label,
-.list #checkbox {
-  color: purple;
-  font-size: 2rem;
-}
-
-/*
-h1 {
-  text-align: center;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  margin-top: 2rem;
-}
-
-.inputText {
-  width: 80%;
-  font-size: 3rem;
-  margin-left: 5%;
-  display: flex;
-}
-input {
-  width: 90%;
-  padding: 15px;
-  font-size: 1.2rem;
-}
-
-button {
-  font-size: 1.5rem;
 }
 .total {
-  width: 20%;
-  font-size: 1.4rem;
-  margin-right: 15%;
-  margin-left: 10%;
-}
-
-input,
-button {
-  border: 2px solid rgba(0, 0, 255, 0.392);
+  background-color: rgb(3, 41, 73);
+  color: white;
   border-radius: 10px;
-  transition: transform 0.5s;
+  padding: 5px;
+}
+.addedToDo {
+  margin: 2rem;
+  color: rgb(182, 3, 3);
+  /* border: 2px dotted orange; */
+  border-radius: 10px;
+  font-size: 150%;
+  padding: 10px;
+  list-style-type: none;
+  width: 80%;
+}
+.addedToDo li {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
-button:hover {
-  background-color: bisque;
+.fa-check {
+  /* border: 2px solid red; */
+  color: wheat;
 }
-button:active {
-  transform: scale(0.9);
-} */
+
+.fa-trash {
+  color: rgb(54, 185, 6);
+}
+
+.fa-trash:hover {
+  color: bisque;
+}
+.fa-trash:active {
+  animation: trash 0.3s;
+}
+
+@keyframes trash {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
