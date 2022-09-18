@@ -45,6 +45,9 @@ const displayList = () => {
         completed.innerHTML = completedTask;
       } else {
         item.parentElement.style.textDecoration = "none";
+        item.parentElement.className = "";
+        completedTask -= 1;
+        completed.innerHTML = completedTask;
       }
     });
   });
