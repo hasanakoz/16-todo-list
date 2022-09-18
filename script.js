@@ -30,7 +30,9 @@ const displayList = () => {
       t.parentElement.style.display = "none";
       list.splice(t);
       total -= 1;
-      completedTask > 0 ? (completedTask -= 1) : completedTask;
+      completedTask > 0 && t.parentElement.className == "checked"
+        ? (completedTask -= 1)
+        : completedTask;
       completed.innerHTML = completedTask;
       totalCount.innerHTML = total;
     });
