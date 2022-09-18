@@ -27,7 +27,7 @@ const displayList = () => {
   console.log(trash);
   trash.forEach((t) => {
     t.addEventListener("click", () => {
-      t.parentElement.innerHTML = "";
+      t.parentElement.style.display = "none";
       list.splice(t);
       total -= 1;
       completedTask > 0 ? (completedTask -= 1) : completedTask;
@@ -48,6 +48,3 @@ const displayList = () => {
     });
   });
 };
-
-// let trash = document.querySelectorAll(".fa-trash");
-// console.log(trash);
