@@ -38,12 +38,13 @@ const displayList = () => {
   let check = document.querySelectorAll(".fa-check");
   check.forEach((item) => {
     item.addEventListener("click", () => {
-      if (item.parentElement.className == "checked") {
+      if (item.parentElement.className != "checked") {
         item.parentElement.style.textDecoration = "line-through";
-      } else {
         item.parentElement.className = "checked";
         completedTask += 1;
         completed.innerHTML = completedTask;
+      } else {
+        item.parentElement.style.textDecoration = "none";
       }
     });
   });
