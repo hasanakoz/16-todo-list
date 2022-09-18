@@ -26,7 +26,7 @@ const displayList = () => {
   var trash = document.querySelectorAll(".fa-trash");
   trash.forEach((t) => {
     t.addEventListener("click", () => {
-      t.parentElement.style.display = "none";
+      t.parentElement.remove();
       let deleted = t.previousSibling;
       console.log(deleted);
       list.map((i) => {
