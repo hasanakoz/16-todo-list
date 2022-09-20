@@ -19,18 +19,20 @@ btn.addEventListener("click", () => {
 });
 
 const displayList = () => {
+  let pr = input.value;
   totalCount.innerHTML = total;
-  toDoList.innerHTML += `<li><i class="fa-solid fa-check"></i>${input.value}<i class="fa-solid fa-trash"></i> </li>`;
+  toDoList.innerHTML += `<li><i class="fa-solid fa-check"></i>${pr}<i class="fa-solid fa-trash"></i> </li>`;
   console.log(list);
   input.value = "";
   var trash = document.querySelectorAll(".fa-trash");
   trash.forEach((t) => {
     t.addEventListener("click", () => {
       t.parentElement.remove();
-      let deleted = t.previousSibling;
-      console.log(deleted);
+      // let deleted = t.previousSibling;
+      // console.log(deleted);
+      console.log(t.previousSibling);
       list.map((i) => {
-        if (i == deleted) {
+        if (i == t.previousSibling) {
           list.splice(list.indexOf(i), 1);
         }
       });
@@ -61,3 +63,7 @@ const displayList = () => {
     });
   });
 };
+
+input.addEventListener("keydown", (e) => {
+  e.code == "Enter" && btn.click();
+});
