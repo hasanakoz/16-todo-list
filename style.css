@@ -28,31 +28,33 @@ h1 {
 .main {
   display: flex;
   align-items: center;
+  justify-content: start;
   margin-top: 5px;
   flex-wrap: wrap;
-  width: 90%;
+  width: 70%;
   margin: auto;
+  gap: 5px;
   /* border: 2px solid red; */
   /* justify-content: space-between; */
 }
 
-.inputText {
+/* .inputText {
   width: 80%;
-  /* border: 2px solid red; */
   display: flex;
-
-  /* justify-content: space-around; */
-}
+  gap: 5px;
+  border: 2px solid green;
+} */
 input {
-  width: 80%;
+  width: 60%;
   height: 3rem;
-  font-size: 1.2rem;
+  font-size: 95%;
   padding: 10px;
   border-radius: 10px;
+  border: 2px solid gray;
 }
 button {
   /* height: 2rem; */
-  width: 20%;
+  /* width: 10%; */
   border-radius: 10px;
   font-size: 1.2rem;
   padding: 10px;
@@ -72,24 +74,41 @@ button:active,
   padding: 5px;
 }
 .addedToDo {
-  margin: 2rem;
+  margin-left: 13%;
   color: rgb(182, 3, 3);
   /* border: 2px dotted orange; */
   border-radius: 10px;
   font-size: 150%;
   padding: 10px;
   list-style-type: none;
-  width: 80%;
+  width: 60%;
 }
 .addedToDo li {
   display: flex;
-  justify-content: space-around;
-  padding: 1rem;
+  justify-content: start;
+  align-items: center;
+  padding: 0.4rem;
+  background-color: rgba(240, 255, 255, 0.474);
+  border-radius: 5px;
+  margin: 7px;
+  position: relative;
+  box-shadow: 5px 5px rgb(191, 247, 199);
 }
-
+.addedToDo li :nth-child(3) {
+  position: absolute;
+  right: 1rem;
+}
+.addedToDo li :nth-child(2) {
+  padding-left: 5%;
+  padding-right: 5%;
+  display: inline-flex;
+}
 .fa-check {
   /* border: 2px solid red; */
-  color: wheat;
+  color: orange;
+}
+.fa-check:hover {
+  color: green;
 }
 
 .fa-trash {
@@ -97,7 +116,7 @@ button:active,
 }
 
 .fa-trash:hover {
-  color: bisque;
+  color: orange;
 }
 .fa-trash:active {
   animation: trash 0.3s;
@@ -113,5 +132,15 @@ button:active,
 
   100% {
     transform: rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main {
+    width: 90%;
+  }
+  .addedToDo {
+    width: 90%;
+    margin-left: 2%;
   }
 }

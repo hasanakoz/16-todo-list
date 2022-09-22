@@ -19,9 +19,8 @@ btn.addEventListener("click", () => {
 });
 
 const displayList = () => {
-  let pr = input.value;
   totalCount.innerHTML = total;
-  toDoList.innerHTML += `<li><i class="fa-solid fa-check"></i>${pr}<i class="fa-solid fa-trash"></i> </li>`;
+  toDoList.innerHTML += `<li><i class="fa-solid fa-check"></i> <p>${input.value}</p><i class="fa-solid fa-trash"></i> </li>`;
   console.log(list);
   input.value = "";
   var trash = document.querySelectorAll(".fa-trash");
@@ -31,11 +30,8 @@ const displayList = () => {
       // let deleted = t.previousSibling;
       // console.log(deleted);
       console.log(t.previousSibling);
-      list.map((i) => {
-        if (i == t.previousSibling) {
-          list.splice(list.indexOf(i), 1);
-        }
-      });
+      list.splice(list.indexOf(t.previousSibling), 1);
+
       console.log(list);
 
       total -= 1;
